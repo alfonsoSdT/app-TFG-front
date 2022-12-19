@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-8">
+      <div class="card card-user">
+        <div *ngIf="this.updating == false" class="card-header">
+          <h5 class="card-title">New Course</h5>
+        </div>
+        <div *ngIf="this.updating == true" class="card-header">
+          <h5 class="card-title">Updating Course</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Name Course</label>
+                  <input type="name" [formControl]="nameCourse" placeholder="Name course" class="form-control input-no-border">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label>Hours needed to complete the course</label>
+                  <input type="number" [formControl]="hoursNeeded" placeholder="360" class="form-control input-no-border">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label>Price x hour of the course</label>
+                  <input type="number" [formControl]="pricePerHour" placeholder=" 10$/h" class="form-control input-no-border">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-auto px-1" style="margin-left: 5px;">
+                <div class="form-group">
+                  <label>More info</label>
+                  <input type="name" [formControl]="moreInfo" placeholder="More info" class="form-control input-no-border">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div *ngIf="this.updating == false" class="update ml-auto mr-auto">
+                <button type="button" class="btn btn-primary btn-round" (click)="createCourse()">Create Course</button>
+              </div>
+              <div *ngIf="this.updating == true" class="update ml-auto mr-auto">
+                <button type="button" class="btn btn-primary btn-round" (click)="updateCourse()">Update Course</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

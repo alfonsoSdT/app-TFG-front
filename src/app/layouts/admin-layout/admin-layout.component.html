@@ -1,0 +1,36 @@
+<div *ngIf="this.userLogged == true" class="wrapper">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+        <sidebar-cmp></sidebar-cmp>
+    </div>
+    <div class="main-panel">
+        <navbar-cmp></navbar-cmp>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+        <footer-cmp></footer-cmp>
+    </div>
+</div>
+<fixedplugin-cmp *ngIf="this.userLogged == true"></fixedplugin-cmp>
+
+<div class="body" *ngIf="this.userLogged == false" style="display:flex; background-color: whitesmoke; width: 100%; height: 100vh; align-items: center;justify-content: center;"  >
+    <div class="card card-login" data-background="color" data-color="blue" style="float:center ;width: 50%; height: 50%;">
+        <div class="card-header">
+            <h3 class="card-title">Login</h3>
+        </div>
+        <div class="card-content" style=" padding: 15px; ">
+            <div class="form-group">
+                <label>User name</label>
+                <input type="name" [formControl]="name" placeholder="User name" class="form-control input-no-border">
+                <strong *ngIf="this.showPopUpUser == true" style="color:red">Your account could not be found </strong>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" [formControl]="password" placeholder="******" class="form-control input-no-border">
+                <strong *ngIf="this.showPopUpPassword == true" style="color:red">Wrong password for the given user name</strong>
+            </div>
+        </div>
+        <div class="footer text-center" >
+            <button type="button" class="btn btn-fill btn-wd" (click)="checkUser()">Enter</button>
+        </div>
+    </div>
+</div>

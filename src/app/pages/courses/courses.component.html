@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-auto">
+      <div class="input-group no-border" style="width: 30%; height: 10%;">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search course/s ...">
+        <div class="input-group-text">
+          <i class="nc-icon nc-zoom-split"></i>
+        </div>
+      </div>
+      
+          <div *ngFor="let course of courses | filter:searchText; index as i; first as isfirst" style="float:left; display:inline;">
+              <div class="card card-user" style="padding: 15px; margin: 5px;">
+                  <div class="card-body ">
+                    <a href="#/updateCourse/{{course.nameCourse}}">
+                      <img class="avatar border-gray" src="assets/img/Course.png" alt="...">
+                      <h5 class="title">{{course.nameCourse}}</h5>
+                    </a>
+                    <strong>Status:</strong>
+                    <p class="description" style="color:black;">{{course.StatusCourse.statusCourseName}}</p>
+                    <strong>More info:</strong>
+                    <p class="description" style="color:black;">{{course.moreInfo}}</p>
+                    <div class="card card-user" style="color: black;  margin-right: 50px;margin-left: 50px; display:inline-block;">
+                      <a class="button"  type="submit" (click)="deleteCourse(course.nameCourse)"><i class="nc-icon nc-simple-remove" style="font-size:25px ;color: black;"></i></a>
+                    </div>
+                    <div class="card card-user" style=" color: black ; margin-right: 50px;margin-left: 50px; display:inline-block;">
+                      <a class="button"  type="submit" (click)="updateCourse(course.nameCourse)"><i class="nc-icon nc-ruler-pencil" style="font-size:25px; color: black;"></i></a>
+                    </div>
+                    
+                  </div>
+              </div> 
+          </div>
+          <div class="card card-user" style="padding: 15px; margin: 5px;">
+            <a type="button" (click)="createCourse()"><i class="nc-icon nc-simple-add"></i></a>
+          </div>
+      </div>
+</div>
+  

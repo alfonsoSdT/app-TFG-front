@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="card card-user">
+      <div class="image">
+        <img src="assets/img/damir-bosnjak.jpg" alt="...">
+      </div>
+      <div class="card-body">
+        <div class="author">
+          <a href="#">
+            <img class="avatar border-gray" src="assets/img/mike.jpg" alt="...">
+            <h5 class="title">{{this.userLog.nameUser}}</h5>
+          </a>
+          <p class="description">
+            @{{this.userLog.nameUser}}{{this.userLog.idUser}}
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="col-md-9">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">My courses</h5>
+      </div>
+      <div class="card-body">
+        <div *ngFor="let course of courses; index as i; first as isfirst" style="float:left; display:inline;">
+          <div class="card card-user" style="padding: 15px; margin: 5px;background-color: whitesmoke;">
+              <div class="card-body ">
+                <a href="#">
+                  <img class="avatar border-gray" src="assets/img/Course.png" alt="...">
+                  <h5 class="title">{{course.nameCourse}}</h5>
+                </a>
+                <strong>Status:</strong>
+                <p class="description" style="color:black;">{{course.StatusCourse.statusCourseName}}</p>
+                <strong>More info:</strong>
+                <p class="description" style="color:black;">{{course.moreInfo}}</p>
+              </div>
+          </div> 
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

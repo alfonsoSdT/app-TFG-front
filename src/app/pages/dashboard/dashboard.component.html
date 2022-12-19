@@ -1,0 +1,31 @@
+  <div class="row">
+    <div class="col-md-auto">
+        <div *ngFor="let user of users; index as i; first as isfirst" style="float:left; display:inline; width: 300px; height: 700px;">
+          <div class="card card-user" style="padding: 15px; margin: 5px;">
+            <a href="#/user/{{user.nameUser}}">
+              <img class="avatar border-gray" src="assets/img/mike.jpg" alt="...">
+              <h5 class="title">{{user.nameUser}}{{user.surnameUser}}</h5>
+            </a>
+            <p class="description">
+              @{{user.nameUser}}{{user.idUser}}
+            </p>
+            <div>Courses (max 3)</div>
+            <div *ngFor="let dc of usersDC ; index as j; first as isfirst">
+              <div *ngIf="(dc.DataCourse !=null) && (j-i)%3 < 2" >
+                <div *ngIf="(dc.DataCourse.UserIdUser == user.idUser)">
+                    <div class="card card-lock" style="padding: 15px; background: whitesmoke; ">
+                      <h5 class="title">{{dc.DataCourse.Course.nameCourse}}</h5>
+                      <div>
+                        Certified: {{dc.DataCourse.dateCertified}}
+                      </div>
+                      <div>
+                        Expired :  {{dc.DataCourse.dateExpired}}
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
