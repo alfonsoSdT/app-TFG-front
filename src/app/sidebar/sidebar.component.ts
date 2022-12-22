@@ -12,6 +12,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
     { path: '/courses',       title: 'Courses',           icon:'nc-single-02',  class: '' },
     { path: '/users',       title: 'Users',           icon:'nc-single-02',  class: '' },
+    { path: '/aboutToExpire',       title: 'About-to-expire',           icon:'nc-bullet-list-67',  class: '' },
+    
 ];
 
 @Component({

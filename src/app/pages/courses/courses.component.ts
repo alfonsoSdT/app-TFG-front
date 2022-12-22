@@ -21,7 +21,7 @@ searchText;
     this._route.navigate(['createCourse'])
   }
   updateCourse(name:any){
-    let nameParam = name
+    let nameParam = name;
     this._route.navigate(['updateCourse',nameParam])
   }
   deleteCourse(name:any){

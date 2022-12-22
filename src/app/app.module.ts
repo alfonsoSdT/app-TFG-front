@@ -21,6 +21,7 @@ import { UserFormComponent } from './pages/user-form/user-form.component';
 import { CourseFormComponent } from './pages/course-form/course-form.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { AboutToExpireComponent } from './pages/about-to-expire/about-to-expire.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
     UsersComponent,
     LoginComponent,
     UserFormComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    AboutToExpireComponent
   ],
   imports: [
     BrowserAnimationsModule,

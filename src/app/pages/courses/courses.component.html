@@ -18,6 +18,12 @@
                     <p class="description" style="color:black;">{{course.StatusCourse.statusCourseName}}</p>
                     <strong>More info:</strong>
                     <p class="description" style="color:black;">{{course.moreInfo}}</p>
+
+                    <strong>Hours needed:</strong>
+                    <p class="description" style="color:black;">{{course.hoursNeeded}}</p>
+                    <strong>Price / hour:</strong>
+                    <p class="description" style="color:black;">{{course.pricePerHour}}</p>
+                    
                     <div class="card card-user" style="color: black;  margin-right: 50px;margin-left: 50px; display:inline-block;">
                       <a class="button"  type="submit" (click)="deleteCourse(course.nameCourse)"><i class="nc-icon nc-simple-remove" style="font-size:25px ;color: black;"></i></a>
                     </div>

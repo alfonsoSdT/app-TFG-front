@@ -1,0 +1,85 @@
+<div *ngIf="this.nameParam == null" class="row">
+  <div class="row" style="display:flexbox; padding: 15px; margin: 5px;  ">
+    <div class="col-md-12" >
+      <div class="input-group" style="float:left; width: 30%; height: 10%">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+          #d="ngbDatepicker"  />
+        <button class="nc-icon nc-tap-01" (click)="d.toggle()" type="button"></button>
+      </div>
+      <div class="input-group no-border" style=" float:right  ; width: 30%; height: 10%;">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+          placeholder="Search course/s ...">
+        <div class="input-group-text">
+          <i class="nc-icon nc-zoom-split"></i>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let course of courses | filter:searchText; index as i; first as isfirst"
+      style="float:left; display:inline;">
+      <div class="card card-user" style="padding: 15px; margin: 5px;">
+        <div class="card-body ">
+          <a href="#/aboutToExpire/{{course.nameCourse}}/{{model.year}}">
+            <img class="avatar border-gray" src="assets/img/Course.png" alt="...">
+            <h5 class="title">{{course.nameCourse}}</h5>
+          </a>
+
+          <strong>Status:</strong>
+          <p class="description" style="color:black;">{{course.StatusCourse.statusCourseName}}</p>
+          <strong>More info:</strong>
+          <p class="description" style="color:black;">{{course.moreInfo}}</p>
+
+          <strong>Hours needed:</strong>
+          <p class="description" style="color:black;">{{course.hoursNeeded}}</p>
+          <strong>Price / hour:</strong>
+          <p class="description" style="color:black;">{{course.pricePerHour}}</p>
+
+          <div class="card card-user"
+            style="color: black;  margin-right: 50px;margin-left: 50px; display:inline-block;">
+            <a class="button" type="submit" (click)="deleteCourse(course.nameCourse)"><i
+                class="nc-icon nc-simple-remove" style="font-size:25px ;color: black;"></i></a>
+          </div>
+          <div class="card card-user"
+            style=" color: black ; margin-right: 50px;margin-left: 50px; display:inline-block;">
+            <a class="button" type="submit" (click)="updateCourse(course.nameCourse)"><i class="nc-icon nc-ruler-pencil"
+                style="font-size:25px; color: black;"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="this.nameParam != null" class="row">
+  <div class="col-md-6">
+    <div class="card card-user">
+      <div class="card-title" style="padding: 15px; margin: 5px; background: white; display: inline;">
+        <h5>Users with the course "{{this.nameParam}}" about to expire </h5>
+      </div>
+      <div class="card-body" style="padding: 15px; margin: 5px; background: white;">
+        <div *ngFor="let dc of usersDC;">
+          <div *ngIf="(dc.DataCourse.Course.nameCourse == nameParam )&& (checkIfOneYear(dc.DataCourse.dateExpired.year,year)) " style="display: inline;">
+            <a href="#/user/{{dc.nameUser}}">
+              <h5 class="title">{{dc.nameUser}} {{dc.surnameUser}}. </h5>
+            </a>
+            <strong>Date certified:</strong>
+            <p class="description" style="color:black;">
+              {{dc.DataCourse.dateCertified.year}}-{{dc.DataCourse.dateCertified.month}}-{{dc.DataCourse.dateCertified.day}} </p>
+            <strong>Date expired:</strong>
+            <p class="description" style="color:black;">{{dc.DataCourse.dateExpired.year}}-{{dc.DataCourse.dateExpired.month}}-{{dc.DataCourse.dateExpired.day}}</p>
+            
+            <span>{{upCount()}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" style="float: right; ">
+    <div class="card card-user" style="padding: 15px; margin: 5px; background: white; ">
+      <h5 class="title">Number of employees </h5>
+      <div>{{count/2}}</div>
+      <h5 class="title">Price per employee</h5>
+      <div>{{coursePricePerEmployee}}</div>
+      <h5 class="title">Total cost </h5>
+      <div>{{count/2 * coursePricePerEmployee}}$</div>
+    </div>
+  </div>

@@ -6,7 +6,6 @@
           <i class="nc-icon nc-zoom-split"></i>
         </div>
       </div>
-      
       <div *ngFor="let user of users  | filter:searchText" style="float:left; display:inline;">
             <div class="card card-user" style="padding: 15px; margin: 5px;">
               <div class="card-body ">
@@ -24,7 +23,7 @@
                     <a class="button"  type="submit" (click)="updateUser(user.nameUser)"><i class="nc-icon nc-ruler-pencil" style="font-size:25px; color: black;"></i></a>
                  </div>
               </div> 
-            </div>
+          </div>
       </div>
       <div class="card card-user" style="padding: 15px; margin: 5px;">
         <a type="button" (click)="createUser()"><i class="nc-icon nc-simple-add"></i></a>
