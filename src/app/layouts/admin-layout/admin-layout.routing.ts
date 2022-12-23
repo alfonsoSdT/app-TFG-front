@@ -8,7 +8,6 @@ import { LoginComponent } from 'app/pages/login/login.component';
 import { UserFormComponent } from 'app/pages/user-form/user-form.component';
 import { CourseFormComponent } from 'app/pages/course-form/course-form.component';
 
-import { NotificationsComponent } from 'app/pages/notifications/notifications.component';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { AboutToExpireComponent } from 'app/pages/about-to-expire/about-to-expire.component';
 import { TotalCostComponent } from 'app/pages/total-cost/total-cost.component';
