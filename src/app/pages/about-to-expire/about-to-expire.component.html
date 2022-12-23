@@ -4,7 +4,7 @@
       <div class="input-group" style="float:left; width: 30%; height: 10%">
         <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
           #d="ngbDatepicker"  />
-        <button class="nc-icon nc-tap-01" (click)="d.toggle()" type="button"></button>
+        <button class="fa fa-calendar" (click)="d.toggle()" type="button"></button>
       </div>
       <div class="input-group no-border" style=" float:right  ; width: 30%; height: 10%;">
         <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"

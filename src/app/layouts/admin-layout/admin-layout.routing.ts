@@ -11,6 +11,7 @@ import { CourseFormComponent } from 'app/pages/course-form/course-form.component
 import { NotificationsComponent } from 'app/pages/notifications/notifications.component';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { AboutToExpireComponent } from 'app/pages/about-to-expire/about-to-expire.component';
+import { TotalCostComponent } from 'app/pages/total-cost/total-cost.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -26,5 +27,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'updateCourse/:name',     component: CourseFormComponent },
     { path: 'aboutToExpire',  component: AboutToExpireComponent },
     { path: 'aboutToExpire/:name/:year',  component: AboutToExpireComponent },
-    { path: 'notifications',  component: NotificationsComponent }
+    { path: 'totalCost',  component: TotalCostComponent }
 ];

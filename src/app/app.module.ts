@@ -22,6 +22,7 @@ import { CourseFormComponent } from './pages/course-form/course-form.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { AboutToExpireComponent } from './pages/about-to-expire/about-to-expire.component';
+import { TotalCostComponent } from './pages/total-cost/total-cost.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AboutToExpireComponent } from './pages/about-to-expire/about-to-expire.
     LoginComponent,
     UserFormComponent,
     CourseFormComponent,
-    AboutToExpireComponent
+    AboutToExpireComponent,
+    TotalCostComponent
   ],
   imports: [
     BrowserAnimationsModule,

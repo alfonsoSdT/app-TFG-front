@@ -13,6 +13,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/courses',       title: 'Courses',           icon:'nc-single-02',  class: '' },
     { path: '/users',       title: 'Users',           icon:'nc-single-02',  class: '' },
     { path: '/aboutToExpire',       title: 'About-to-expire',           icon:'nc-bullet-list-67',  class: '' },
+    { path: '/totalCost',  title: 'Total-cost', icon:'nc-bullet-list-67', class: '' }
     
 ];
 
