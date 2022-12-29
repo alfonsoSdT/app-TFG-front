@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
-import { first } from 'rxjs';
+
 
 @Component({
   selector: 'app-total-cost',

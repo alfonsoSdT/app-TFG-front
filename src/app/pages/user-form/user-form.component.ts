@@ -18,7 +18,7 @@ export class UserFormComponent implements OnInit {
 
   name:FormControl;
   surname:FormControl;
-  age:FormControl;
+  brithDate:FormControl;
   email:FormControl;
   updating:boolean;
   nameCourse:FormControl;
@@ -51,7 +51,7 @@ export class UserFormComponent implements OnInit {
       }
       this.name= new FormControl(this.userToUpdate?.nameUser);
       this.surname = new FormControl(this.userToUpdate?.surnameUser);
-      this.age =new FormControl(this.userToUpdate?.age);
+      this.brithDate =new FormControl(this.userToUpdate?.brithDate);
       this.email = new FormControl(this.userToUpdate?.email);
       this.nameCourse = new FormControl('Choose a course name');
       this.dateCertified = new FormControl('');;
@@ -60,7 +60,7 @@ export class UserFormComponent implements OnInit {
       this.updating = false;
       this.name= new FormControl('');
       this.surname = new FormControl('');
-      this.age =new FormControl('');;
+      this.brithDate =new FormControl('');;
       this.email = new FormControl('');
       this.nameCourse = new FormControl('');
       this.dateCertified = new FormControl('');;
@@ -70,11 +70,11 @@ export class UserFormComponent implements OnInit {
   createUser(){
     const nameUser = this.name.value;
     const surnameUser = this.surname.value;
-    const age = this.age.value;
+    const brithDate = this.brithDate.value;
     const email = this.email.value;
     
     
-    this.http.post<JSON>('http://localhost:3001/users/create',{'nameUser': nameUser,'surnameUser': surnameUser, 'age': age, 'email': email
+    this.http.post<JSON>('http://localhost:3001/users/create',{'nameUser': nameUser,'surnameUser': surnameUser, 'brithDate': brithDate, 'email': email
     })
     .subscribe((res:any) => {
       if(res.status == 200){
@@ -86,14 +86,14 @@ export class UserFormComponent implements OnInit {
     const idUser = this.userToUpdate.idUser;
     const nameUser = this.name.value;
     const surnameUser = this.surname.value;
-    const age = this.age.value;
+    const brithDate = this.brithDate.value;
     const email = this.email.value;
 
     const nameCourse = this.nameCourse.value;
     const dateCertified = this.dateCertified.value;
     const dateExpired = this.dateExpired.value;
 
-    this.http.post<JSON>('http://localhost:3001/users/update',{idUser: idUser, 'nameUser': nameUser,'surnameUser': surnameUser, 'age': age, 'email': email , 
+    this.http.post<JSON>('http://localhost:3001/users/update',{idUser: idUser, 'nameUser': nameUser,'surnameUser': surnameUser, 'brithDate': brithDate, 'email': email , 
     })
     .subscribe((res:any) => {
       if(res.status == 200){
